@@ -1,0 +1,43 @@
+@import "tailwindcss";
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
+
+@theme {
+  --color-brand-green: #1B8C4E;
+  --color-brand-green-light: #E8F5EE;
+  --color-brand-green-dark: #146B3A;
+  --color-sidebar-bg: #FAFBFC;
+  --color-border-light: #E8ECF0;
+  --color-text-primary: #1A1D26;
+  --color-text-secondary: #6B7280;
+  --color-text-muted: #9CA3AF;
+  --color-badge-active: #1B8C4E;
+  --color-badge-active-bg: #E8F5EE;
+  --color-badge-waiting: #E67E22;
+  --color-badge-waiting-bg: #FEF3E2;
+  --color-badge-done: #6B7280;
+  --color-badge-done-bg: #F3F4F6;
+  --font-sans: "Inter", "Segoe UI", system-ui, -apple-system, sans-serif;
+}
+
+body {
+  font-family: var(--font-sans);
+  background: #F5F6F8;
+  color: var(--color-text-primary);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 5px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #D1D5DB;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #9CA3AF;
+}

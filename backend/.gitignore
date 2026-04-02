@@ -1,0 +1,40 @@
+# 🔹 Virtual Environment (VERY IMPORTANT)
+.venv/
+venv/
+env/
+
+# 🔹 Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# 🔹 Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# 🔹 System files
+.DS_Store
+Thumbs.db
+
+# 🔹 Logs
+*.log
+
+# 🔹 Environment variables (secrets)
+.env
+
+# 🔹 Build / distribution
+build/
+dist/
+*.egg-info/
+
+# 🔹 VS Code / IDE
+.vscode/
+.idea/
+
+# 🔹 Temporary files
+*.tmp
+
+# 🔹 Audio / generated files (optional)
+*.mp3
+*.wav
+#*.txt
