@@ -7,8 +7,21 @@ env:
   DOCKER_TOKEN: ${{ secrets.DOCKERHUB_TOKEN }}
 
 jobs:
+  lint-backend:
+    name: Lint Backend Dockerfile
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Lint Backend Dockerfile
+        uses: hadolint/hadolint-action@v3.1.0
+        with:
+          dockerfile: ./backend/Dockerfile
+
   build-backend:
     name: Build Backend
+    needs: lint-backend # ← won't build if Dockerfile is malformed
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code

@@ -7,14 +7,16 @@ RUN apt-get update && apt-get install -y \
 
 COPY requirements.txt .
 
+# Pin setuptools below v82 to retain pkg_resources
 RUN pip install --upgrade pip "setuptools<82.0.0" wheel
 
+# Install torch separately (large, benefits from layer caching)
 RUN pip install --no-cache-dir torch==2.5.1 --index-url https://download.pytorch.org/whl/cpu
 
-# --no-build-isolation forces pip to use the current env's setuptools
-# instead of spinning up a fresh isolated build env with latest setuptools
+# Install whisper with no build isolation to use pinned setuptools
 RUN pip install --no-cache-dir --no-build-isolation openai-whisper==20231117
 
+# Install app dependencies
 RUN pip install --no-cache-dir -r requirements.txt
 
 COPY . .
